@@ -26,7 +26,7 @@ This is the terminal-based version. It can read and edit files on your computer,
 - Requires Node.js and a terminal (VS Code's built-in terminal works great)
 - If this feels intimidating, start with Option A and come back here when you're ready
 
-Claude also has extensions for VS Code and JetBrains if you use those IDEs.
+Claude also works inside code editors (called IDEs). If you use VS Code, Cursor, or JetBrains, you can install Claude as an extension and use it right where you write code or work on files. Cursor in particular has Claude built in as its default AI model.
 
 ## Your First Real Conversation
 
@@ -51,9 +51,9 @@ This is where it gets interesting. You can give Claude a file called CLAUDE.md t
 
 **In the desktop app:** Create a Project (left sidebar), then add your CLAUDE.md content to the Project instructions. Every conversation in that Project will have your context.
 
-**In Claude Code:** Create a file called `CLAUDE.md` in your working directory. Claude reads it automatically at the start of every session.
+**In Claude Code:** Claude Code can generate a starter CLAUDE.md for you automatically. Just type `/init` in your first session and it will scan your project and create one. Then open the file it created and add your personal context to it (who you are, how you work, your rules). Don't overwrite it with a blank template, build on top of what `/init` gives you.
 
-We've included a starter template in this repo: **[starter-claude.md](starter-claude.md)**. Copy it, fill in your details, and save it as CLAUDE.md.
+We've included a starter template in this repo: **[starter-claude.md](starter-claude.md)**. Use it as a reference for what to add to your CLAUDE.md. For desktop app users, you can paste it directly into your Project instructions.
 
 ### What goes in a CLAUDE.md:
 - **Who you are.** Role, background, what you're working on.
@@ -117,4 +117,4 @@ You don't need all of that on day one. Start with basic rules in your CLAUDE.md 
 
 ---
 
-Built by Michael Albers. Questions? Reach out.
+Built by Michael Albers. Questions? michael AT albersadvisory.biz
