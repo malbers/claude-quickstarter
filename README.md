@@ -117,4 +117,4 @@ You don't need all of that on day one. Start with basic rules in your CLAUDE.md 
 
 ---
 
-Built by Michael Albers. Questions? michael AT albersadvisory.biz
+Built by Michael Albers. Questions? michael@albersadvisory.biz
