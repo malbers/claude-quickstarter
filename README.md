@@ -134,6 +134,18 @@ This was developed running into the cap repeatedly, then iterating. Anthropic la
 - **Explore Projects** in the desktop app. Projects let you organize conversations by topic with persistent instructions.
 - **Set up memory** (see "Build a Memory System" above). This is what separates "I use Claude sometimes" from "Claude is my operating partner."
 
+## The Next Layer
+
+Once Claude is part of your daily workflow and your CLAUDE.md + memory system are dialed in, these are the features worth exploring next. Don't reach for them on day one — they're force multipliers, not starter equipment.
+
+- **Skills** — reusable slash commands that bundle a workflow. You type `/<skillname>` and Claude runs the procedure. Anthropic ships some by default; the community has built many more. The one I reach for most: `/brainstorming` — it walks me through a structured exploration before any creative work (features, copy, decisions). If I'm about to start something open-ended, that's where I begin. Worth installing. [Anthropic Skills docs](https://docs.anthropic.com/en/docs/claude-code/skills)
+- **MCP servers** — connect Claude to external systems. Read your Gmail, query your calendar, browse a SQL database, drive your browser. The protocol is open; both Anthropic and the community publish servers. This is what turns Claude from a chat tool into something that can actually do work in your stack. [Model Context Protocol overview](https://modelcontextprotocol.io)
+- **Hooks** — Claude Code lets you run shell commands automatically at session events (start, stop, before tool use, etc.). Useful for state-file safety checks, automatic logging, periodic backups, or enforcing rules you don't trust yourself to remember.
+- **Subagent dispatch** — fire off parallel agents to do bounded work (research, file edits, batch synthesis) while you keep talking to the main thread. The pattern in the "How We Manage Token Usage" section above explains when this earns its keep.
+- **Plugins** — Anthropic's plugin system lets you bundle skills, hooks, and configuration into a single package. The community-built `superpowers` plugin is a good example: it ships a bundle of opinionated workflows (brainstorming, debugging, planning, code review) that compose well together. Worth a look once you've gotten value from individual skills.
+
+The honest sequence: get comfortable with daily Claude → install a skill or two (start with `/brainstorming`) → connect one MCP server that fits your work → then think about hooks and plugins. Don't try to set all of this up at once.
+
 ## Resources
 
 - [Claude documentation](https://docs.anthropic.com)
