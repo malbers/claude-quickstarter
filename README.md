@@ -98,6 +98,33 @@ I built a more comprehensive trust framework that covers data privacy, action pe
 
 You don't need all of that on day one. Start with basic rules in your CLAUDE.md and add sophistication as you learn what matters to you.
 
+## How We Manage Token Usage
+
+Claude Max gives you real capacity, but if you default to Opus + high effort on everything, you'll hit your weekly cap by Wednesday. Here's the operating posture that produces *more* output with substantially fewer tokens.
+
+**Two levers, often confused:**
+- **Model** = capability ceiling (Haiku → Sonnet → Opus, in cost order)
+- **Effort** = thinking budget (low / medium / high)
+
+These are orthogonal and compound. `Opus + high` is the most expensive combination available; `Haiku + low` is the cheapest. Most work belongs in the middle.
+
+**The complexity ≠ scale rule.** A 5,000-line code review against established conventions is volume-heavy, judgment-light → Sonnet at low effort. A 200-word strategic decision can be five-paths-worth-deliberating → Opus at high effort. Don't reach for high-spend combinations because the task feels big. Check whether the bigness is volume or judgment.
+
+**The intuition test for effort:** *How many genuinely different reasonable answers could a careful person produce here?*
+- 1 → low
+- 2-3 → medium (default)
+- 4+ with real tradeoffs → high
+
+Importance and irreversibility are not reasons for high effort. The only reason is genuine ambiguity in the task.
+
+**The architectural pattern:** subagent for fetch + synthesis (Sonnet, usually), main thread for judgment + voice (Opus). Subagents save output to a file and return a tight summary; main thread reads, decides, doesn't re-derive. This separates volume from judgment cleanly and keeps Opus reserved for what it's actually good at.
+
+**Practical discipline:** name model + effort explicitly when scoping a dispatch ("Sonnet + medium," "Opus + high"). Forces conscious choice over defaulting.
+
+**Full guide with examples + matrix:** [operating-discipline/token-discipline.md](operating-discipline/token-discipline.md)
+
+This was developed running into the cap repeatedly, then iterating. Anthropic later raised Max-plan caps; the discipline still earns its keep — headroom buys *more of the right work*, not permission for sloppy work.
+
 ## What to Do Next
 
 - **Use it daily.** The value compounds. Claude gets more useful the more context it has about your work.
